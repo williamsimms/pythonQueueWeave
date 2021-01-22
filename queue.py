@@ -13,12 +13,5 @@ class Queue:
     def dequeue(self):
         return self.data.pop()
 
-
-if __name__ == '__main__':
-    queue = Queue()
-    queue.enqueue(1)
-    queue.enqueue(5)
-    queue.enqueue(3)
-    print(queue)
-    queue.dequeue()
-    print(queue)
+    def peek(self):
+        return self.data[len(self.data) - 1]
