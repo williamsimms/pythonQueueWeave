@@ -1,5 +1,3 @@
-from logging import warn
-import queue
 import unittest
 from main import weave
 from queue import Queue
