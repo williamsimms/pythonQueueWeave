@@ -25,22 +25,28 @@ from queue import Queue
 
 
 def weave(queue_one: Queue, queue_two: Queue):
-    queue = Queue()
+    queue: Queue = Queue()
 
     while queue_one.peek() or queue_two.peek():
-        queue_one.peek() and queue.enqueue(queue_one.dequeue())
-        queue_two.peek() and queue.enqueue(queue_two.dequeue())
+        if queue_one.peek():
+            queue.enqueue(queue_one.dequeue())
+
+        if queue_two.peek():
+            queue.enqueue(queue_two.dequeue())
+
+    return queue
 
 
 if __name__ == '__main__':
-    queue_one: Queue = Queue()
-    queue_one.enqueue(3)
-    queue_one.enqueue(5)
-    queue_one.enqueue(7)
+    queueone: Queue = Queue()
+    queueone.enqueue(3)
+    queueone.enqueue(5)
+    queueone.enqueue(7)
 
-    queue_two: Queue = Queue()
-    queue_two.enqueue(3)
-    queue_two.enqueue(3)
-    queue_two.enqueue(3)
+    queuetwo: Queue = Queue()
+    queuetwo.enqueue(11)
+    queuetwo.enqueue(22)
+    queuetwo.enqueue(112)
+    queuetwo.enqueue(117)
 
-    weave(queue_one, queue_two)
+    print(weave(queueone, queuetwo))

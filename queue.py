@@ -1,4 +1,7 @@
 
+import queue
+
+
 class Queue:
 
     def __init__(self):
@@ -14,4 +17,13 @@ class Queue:
         return self.data.pop()
 
     def peek(self):
-        return self.data[len(self.data) - 1]
+        if len(self.data) == 0:
+            return None
+
+        length = len(self.data)
+
+        return self.data[length - 1]
+
+
+if __name__ == '__main__':
+    queue = Queue()
