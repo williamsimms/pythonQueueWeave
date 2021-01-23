@@ -49,3 +49,7 @@ class WeaveTest(unittest.TestCase):
         self.assertEqual(result.dequeue(), 4)
         self.assertEqual(result.dequeue(), 'four')
         self.assertIsNone(result.dequeue())
+
+
+if __name__ == '__main__':
+    unittest.main()
