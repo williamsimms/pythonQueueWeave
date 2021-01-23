@@ -27,3 +27,4 @@ class Queue:
 
 if __name__ == '__main__':
     queue = Queue()
+    queue.enqueue(4)
